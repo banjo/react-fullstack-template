@@ -1,32 +1,43 @@
-# simple-react-full-stack
+<p align="center">
 
-[![Build Status](https://travis-ci.org/crsandeep/simple-react-full-stack.svg?branch=master)](https://travis-ci.org/crsandeep/simple-react-full-stack)
-[![Greenkeeper badge](https://badges.greenkeeper.io/crsandeep/simple-react-full-stack.svg)](https://greenkeeper.io/)
+  <!-- <a href="https://github.com/banjoanton/react-fullstack-template">
+    <img src="https://i.imgur.com/WjsN7MC.png" alt="Logo" width="150" height="150">
+  </a> -->
+  <h1 align="center">React Template</h1>
 
-This is a boilerplate to build a full stack web application using React, Node.js, Express and Webpack. It is also configured with webpack-dev-server, eslint, prettier and babel.
+  <p align="center">
+    This is a simple full stack React template. Based on <a href="https://github.com/crsandeep/simple-react-full-stack">this</a> repository.
+    <br />
+  </p>
+</p>
 
-- [simple-react-full-stack](#simple-react-full-stack)
-  - [Introduction](#introduction)
-    - [Development mode](#development-mode)
-    - [Production mode](#production-mode)
-  - [Quick Start](#quick-start)
-  - [Documentation](#documentation)
-    - [Folder Structure](#folder-structure)
-    - [Babel](#babel)
-    - [ESLint](#eslint)
-    - [Webpack](#webpack)
-    - [Webpack dev server](#webpack-dev-server)
-    - [Nodemon](#nodemon)
-    - [Express](#express)
-    - [Concurrently](#concurrently)
-    - [VSCode + ESLint + Prettier](#vscode--eslint--prettier)
-      - [Installation guide](#installation-guide)
+- [Introduction](#introduction)
+  - [Development mode](#development-mode)
+  - [Production mode](#production-mode)
+- [Quick Start](#quick-start)
+- [Documentation](#documentation)
+  - [Folder Structure](#folder-structure)
+  - [Babel](#babel)
+  - [ESLint](#eslint)
+  - [Webpack](#webpack)
+  - [Webpack dev server](#webpack-dev-server)
+  - [Nodemon](#nodemon)
+  - [Express](#express)
+  - [Concurrently](#concurrently)
+  - [VSCode + ESLint + Prettier](#vscode--eslint--prettier)
+    - [Installation guide](#installation-guide)
 
 ## Introduction
 
-[Create React App](https://github.com/facebook/create-react-app) is a quick way to get started with React development and it requires no build configuration. But it completely hides the build config which makes it difficult to extend. It also requires some additional work to integrate it with an existing Node.js/Express backend application.
+This React app is a fork of [this](https://github.com/crsandeep/simple-react-full-stack) React boilerplate. I made some changes I though was necessary for a React template, such as:
+- Hooks instead of classes
+- Refactored to make it more scalable
+- Added some basic middleware for unknown endpoints and error handling
+- Added MongoDB
+- Added dotenv
+- Added Helmet.js
 
-This is a simple full stack [React](https://reactjs.org/) application with a [Node.js](https://nodejs.org/en/) and [Express](https://expressjs.com/) backend. Client side code is written in React and the backend API is written using Express. This application is configured with [Airbnb's ESLint rules](https://github.com/airbnb/javascript) and formatted through [prettier](https://prettier.io/).
+Some instructions below are updated, and some are from the original.
 
 ### Development mode
 
@@ -40,22 +51,22 @@ In the production mode, we will have only 1 server running. All the client side 
 
 ```bash
 # Clone the repository
-git clone https://github.com/crsandeep/simple-react-full-stack
+git clone https://github.com/banjoanton/react-fullstack-template
 
 # Go inside the directory
-cd simple-react-full-stack
+cd react-fullstack-template
 
 # Install dependencies
-yarn (or npm install)
+npm install
 
 # Start development server
-yarn dev (or npm run dev)
+npm run dev
 
 # Build for production
-yarn build (or npm run build)
+npm run build
 
 # Start production server
-yarn start (or npm start)
+npm start
 ```
 
 ## Documentation
@@ -86,6 +97,7 @@ Babel requires plugins to do the transformation. Presets are the set of plugins 
 
 ```javascript
 {
+  "parser": "babel-eslint",
   "extends": ["airbnb"],
   "env": {
     "browser": true,
@@ -94,7 +106,12 @@ Babel requires plugins to do the transformation. Presets are the set of plugins 
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "linebreak-style": 0,
+    "indent": [
+        "error",
+        4
+    ]
   }
 }
 ```
@@ -240,8 +257,7 @@ This starts a server and listens on port 8080 for connections. The app responds 
     ```javascript
     "eslint.alwaysShowStatus": true,
     "eslint.autoFixOnSave": true,
-    "editor.formatOnSave": true,
-    "prettier.eslintIntegration": true
+    "editor.formatOnSave": true
     ```
 
 Above, we have modified editor configurations. Alternatively, this can be configured at the project level by following [this article](https://medium.com/@netczuk/your-last-eslint-config-9e35bace2f99).
