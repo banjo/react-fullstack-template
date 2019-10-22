@@ -1,12 +1,13 @@
 <p align="center">
 
-  <!-- <a href="https://github.com/banjoanton/react-fullstack-template">
-    <img src="https://i.imgur.com/WjsN7MC.png" alt="Logo" width="150" height="150">
-  </a> -->
+  <a href="https://github.com/banjoanton/react-fullstack-template">
+    <img src="https://hotemoji.com/images/dl/9/rocket-emoji-by-twitter.png" alt="Logo" width="150" height="150">
+  </a>
   <h1 align="center">React Template</h1>
 
   <p align="center">
     This is a simple full stack React template. Based on <a href="https://github.com/crsandeep/simple-react-full-stack">this</a> repository.
+    React, Node.js, Express, MongoDB, Webpack, ESLint.
     <br />
   </p>
 </p>
@@ -55,6 +56,9 @@ git clone https://github.com/banjoanton/react-fullstack-template
 
 # Go inside the directory
 cd react-fullstack-template
+
+# Optional: remove git
+rm -rf .git
 
 # Install dependencies
 npm install
