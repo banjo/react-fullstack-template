@@ -16,6 +16,7 @@ mongoose
 
 app.use(bodyParser.json());
 app.use(helmet());
+app.use("tiny");
 app.use(express.static('dist'));
 
 app.use('/api', apiRouter);
